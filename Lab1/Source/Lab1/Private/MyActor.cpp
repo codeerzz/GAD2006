@@ -4,7 +4,8 @@
 #include "MyActor.h"
 
 // Sets default values
-AMyActor::AMyActor()
+AMyActor::AMyActor() :
+	Health(100)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -24,7 +25,28 @@ void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	Count++; 
-	GEngine->AddOnScreenDebugMessage(-1,5.0f,FColor::Cyan,FString::Printf(TEXT("Count: %d"), Count));
+	
+	
+	// Yarina Not Can degiskeni eklencek ve blueprintler enginede acilip variablelara eriselecek.
 
+
+
+
+	/*
+	GEngine->AddOnScreenDebugMessage(-1,5.0f,FColor::Cyan,FString::Printf(TEXT("Count: %d"), Count));
+	*/
+}
+
+void AMyActor::DamagePlayer(float Damage)
+{
+	Health -= Damage;
+
+	if(Health < 0){
+	UE_LOG(LogTemp, Display, TEXT("gg easy peasy "));
+        }
+	else
+	{
+		UE_LOG(LogTemp, Display, TEXT("remaing health %f"),Health);
+	}
 }
 

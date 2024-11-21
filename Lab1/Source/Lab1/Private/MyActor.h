@@ -22,9 +22,17 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintCallable, Category ="Lab1_test")
+	void DamagePlayer(float Damage);
+
+public:
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Lab1_test")
+	float Health;
  
 private:
 	int32 Count;
+
 
 
 
