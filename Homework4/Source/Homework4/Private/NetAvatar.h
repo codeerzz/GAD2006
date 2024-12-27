@@ -10,13 +10,13 @@
 #include "NetAvatar.generated.h"
 
 /**
- *
+ * 
  */
 UCLASS()
 class ANetAvatar : public ANetBaseCharacter
 {
 	GENERATED_BODY()
-
+	
 public:
 
 	ANetAvatar();
@@ -26,6 +26,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	USpringArmComponent* SpringArm;
+
+	UPROPERTY(BlueprintReadWrite)
+	float MovementScale;
 
 	virtual void BeginPlay() override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
